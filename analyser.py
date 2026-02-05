@@ -1,35 +1,25 @@
-#In here iam defining the structure of how i want the data to look , like which is a dictionary
-student_data = [
-    {"name": "Andiswa", "surname": "Ndzimande", "grade": "A+"},
-    {"name": "Anele", "surname": "Dhludhla","grade": "B"},
-    {"name": "Noxolo","surname": "Shabangu", "grade": "A"}
-]
-# creating an empty list that will store the student's records 
+full_names =  ["Andiswa Ndzimande", "Anele Dhludhla", "Noxolo Shabangu", "Slindile Mthimunye", "Lerato Tala"]
+grade = [90.05 ,79.85,76.8, 80,77.02]
 students = []
 
-
-
-num_students = int(input("Enter the number of students in your subject: "))
-
-for i in range(num_students):
-    name = input("Enter student's name: ")
-    surname = input("Enter student's surname: ")
-    grade = float(input("Enter student's grade : "))
+num_students = int(input("Enter the number of students (1-5): "))
     
-    student_dict = {"name": name,"surname":surname, "grade":(grade) }
+for i in range(num_students):
+    student_dict = {"full_name": full_names[i], "grade":grade[i]}
+  
     students.append(student_dict)
-highest_score = float(max(student_dict["grade"]))
-lowest_score = float(min(student_dict["grade"]))
-total_marks = float(sum(student_dict["grade"]))
+print(student_dict)
+    
+    
+highest_score = float(max(grade[:num_students]))
+lowest_score = float(min(grade[:num_students]))
+total_marks = float(sum(grade[:num_students]))
 class_average = int(total_marks/ num_students)
     
-    
-    
-
 print(students)
-print(f"This is programming class's : {highest_score}")
-print(f"This is programming class's : {lowest_score}")
-print(f"This is programming class's : {total_marks}")
-print(f"This is programming class's : {class_average}")
+print(f"This is programming class's highest_score : {highest_score}")
+print(f"This is programming class's lowest_score: {lowest_score}")
+print(f"This is programming class's total marks : {total_marks}")
+print(f"This is programming class's  average pass mark: {class_average}")
 
 
